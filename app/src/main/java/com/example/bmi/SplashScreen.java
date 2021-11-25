@@ -4,13 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.view.View;
 import android.widget.TextView;
 
 public class SplashScreen extends AppCompatActivity {
     TextView next;
+    private static long time_s=5000;
+    private CountDownTimer counter;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+      /* counter=new CountDownTimer(time_s,1000) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+intent
+            }
+        }*/
         setContentView(R.layout.activity_splash_screen);
         getSupportActionBar().hide();
         next=findViewById(R.id.next);
