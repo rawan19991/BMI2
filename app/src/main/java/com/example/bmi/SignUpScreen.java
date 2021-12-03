@@ -16,8 +16,8 @@ TextView login;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_screen);
         getSupportActionBar().setTitle("BMI Analyzer");
-        login=findViewById(R.id.textView10);
-        Button sign = findViewById(R.id.button2);
+        login=findViewById(R.id.login);
+        Button sign = findViewById(R.id.create);
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

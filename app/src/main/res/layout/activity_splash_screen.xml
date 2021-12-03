@@ -17,15 +17,13 @@
 
     <TextView
         android:id="@+id/next"
-        android:layout_width="133dp"
-        android:layout_height="75dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:gravity="right"
         android:text="Next"
-        android:textColor="#FFFFFF"
+        android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
 

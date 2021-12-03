@@ -207,7 +207,7 @@ android:layout_gravity="center
     </LinearLayout>
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/savedata"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content"

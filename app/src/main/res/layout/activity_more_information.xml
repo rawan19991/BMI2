@@ -182,7 +182,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/saveedata"
         android:layout_gravity="center"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
