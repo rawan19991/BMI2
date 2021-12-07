@@ -27,29 +27,36 @@ Button addrecord,addfood,viewfood;
         c.setHasFixedSize(true);
         c.setLayoutManager(new LinearLayoutManager(this));
         ArrayList<UserModel> list=new ArrayList<>();
-        list.add(new UserModel("Mohmmed","normal","60","170","20/10/1999"));
-        list.add(new UserModel("Mohmmed","normal","60","170","20/10/1999"));
-        list.add(new UserModel("Mohmmed","normal","60","170","20/10/1999"));
-        list.add(new UserModel("Mohmmed","normal","60","170","20/10/1999"));
-        list.add(new UserModel("Mohmmed","normal","60","170","20/10/1999"));
+        list.add(new UserModel("normal","60","170","20/10/1999"));
+        list.add(new UserModel("normal","60","170","20/10/1999"));
+        list.add(new UserModel("normal","60","170","20/10/1999"));
+        list.add(new UserModel("normal","60","170","20/10/1999"));
+        list.add(new UserModel("normal","60","170","20/10/1999"));
         HomerAdapter adapter=new HomerAdapter(list,this);
         c.setAdapter(adapter);
         addrecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i=new Intent(HomeActivity.this,new_record.class);
+                finish();
                 startActivity(i);
             }
         });
         addfood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i=new Intent(HomeActivity.this,add_food_details.class);
+                finish();
+                startActivity(i);
 
             }
         });
         viewfood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i=new Intent(HomeActivity.this,Food_list.class);
+                finish();
+                startActivity(i);
 
             }
         });

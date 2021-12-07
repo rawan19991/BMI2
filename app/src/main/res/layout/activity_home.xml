@@ -74,8 +74,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_user"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
-        android:layout_marginTop="7dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="5dp"
         tools:listitem="@layout/view_status" />
 
     <LinearLayout
@@ -85,19 +85,19 @@
         <Button
             android:id="@+id/add_food"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
-            android:layout_marginRight="5dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="15dp"
             android:background="@color/main_color"
-            android:layout_weight="0.5"
+            android:layout_weight="0.4"
             android:text="Add Food" />
 
         <Button
             android:id="@+id/add_record"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="35dp"
             android:layout_weight="0.5"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:background="@color/main_color"
             android:text="Add Record" />
     </LinearLayout>
@@ -105,7 +105,7 @@
     <Button
         android:id="@+id/view_food"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginTop="10dp"
         android:background="@color/main_color"
         android:text="View Food" />

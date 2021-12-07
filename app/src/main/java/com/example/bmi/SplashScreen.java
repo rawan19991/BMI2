@@ -27,6 +27,22 @@ intent
         }*/
         setContentView(R.layout.activity_splash_screen);
         getSupportActionBar().hide();
+        getSupportActionBar().hide();
+        Thread thread=new Thread(){
+            public void run(){
+                try {
+                    sleep( time_s );
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                finally {
+                    Intent i=new Intent(SplashScreen.this,LoginScreen.class);
+                    startActivity(i);
+
+                }
+            }
+        };thread.start();
         next=findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener() {
             @Override

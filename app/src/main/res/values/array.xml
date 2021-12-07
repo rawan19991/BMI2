@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="foodCato" >
+        <item>fish</item>
+        <item>fat</item>
+        <item>fruit</item>
+        <item>carbohydrate</item>
+    </string-array>
+
+</resources>

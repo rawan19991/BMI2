@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">BMI</string>
     <string name="Log_out"> <u>Log out</u></string>
+    <string name="Next"> <u>Next</u></string>
+    <string name="edit">Edit</string>
 
 
 </resources>

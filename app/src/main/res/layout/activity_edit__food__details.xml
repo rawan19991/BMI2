@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+android:layout_marginRight="15dp"
+android:layout_marginLeft="15dp"
+tools:context=".add_food_details">
+
+<TextView
+    android:id="@+id/textView5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="5dp"
+    android:layout_gravity="center"
+    android:textColor="@color/main_color"
+    android:textSize="30dp"
+    android:textStyle="bold"
+    android:text="Edit Food Details " />
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/food_name"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/main_color"
+        android:layout_marginRight="30dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/food_namee"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:background="@drawable/custome"
+        android:ems="10"
+        android:paddingLeft="5dp"
+        android:inputType="textPersonName" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="100dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="30dp"
+        android:text="Categories"
+        android:textColor="@color/main_color"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <Spinner
+        android:id="@+id/catog_spinner"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:spinnerMode="dropdown" />
+</LinearLayout>
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/main_color"
+        android:text="Calory" />
+
+    <EditText
+        android:id="@+id/food_calory"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:ems="7"
+        android:padding="5dp"
+        android:background="@drawable/custome"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:text="cal/g" />
+</LinearLayout>
+
+<TextView
+    android:id="@+id/food_photo"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    android:layout_marginTop="10dp"
+    android:textColor="@color/main_color"
+    android:textSize="20sp"
+    android:text="Photo" />
+
+
+<ImageView
+    android:id="@+id/img_food"
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="10dp"
+    android:gravity="left"
+    tools:srcCompat="@drawable/apple" />
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="10dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:textSize="15sp"
+        android:layout_marginRight="10dp"
+        android:text="upload photo" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:text="save" />
+</LinearLayout>
+</LinearLayout>
