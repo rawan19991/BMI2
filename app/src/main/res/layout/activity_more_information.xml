@@ -40,6 +40,7 @@
             />
 
         <RadioGroup
+            android:id="@+id/radio_group"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -47,14 +48,14 @@
             >
 
             <RadioButton
-                android:id="@+id/radioButton"
+                android:id="@+id/rb_male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="40dp"
                 android:text="Male" />
 
             <RadioButton
-                android:id="@+id/radioButton2"
+                android:id="@+id/rb_female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Female" />
@@ -92,10 +93,11 @@
             app:backgroundTint="@null" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/weightuser"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
+            android:gravity="center"
             android:inputType="number" />
 
         <Button
@@ -137,8 +139,9 @@
             app:backgroundTint="@null" />
 
         <EditText
-            android:id="@+id/editTextNumber1"
+            android:id="@+id/lengthuser"
             android:layout_width="100dp"
+            android:gravity="center"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
             android:inputType="number" />
@@ -173,10 +176,12 @@
             android:textSize="20sp"  />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/dob_et"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
+            android:gravity="center"
+            android:focusable="false"
             android:inputType="date" />
 
     </LinearLayout>

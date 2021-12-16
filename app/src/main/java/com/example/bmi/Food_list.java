@@ -14,7 +14,8 @@ import com.example.bmi.Model.UserModel;
 import java.util.ArrayList;
 
 public class Food_list extends AppCompatActivity {
-
+    Food_Adapter adapter;
+    static Food_list instance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,14 +23,21 @@ public class Food_list extends AppCompatActivity {
         RecyclerView c=findViewById(R.id.recyclerview_food);
         c.setHasFixedSize(true);
         c.setLayoutManager(new LinearLayoutManager(this));
-        ArrayList<Food_Model> list=new ArrayList<>();
-        list.add(new Food_Model(R.drawable.fish,"15","fish","fish"));
-        list.add(new Food_Model(R.drawable.apple,"20","apple","fruit"));
-        list.add(new Food_Model(R.drawable.bread,"100","bread","carboydrates"));
-        list.add(new Food_Model(R.drawable.oliveoil,"45","olive oil","fat"));
-        Food_Adapter adapter=new Food_Adapter(list,this);
         c.setAdapter(adapter);
+        adapter=new Food_Adapter(UserModel.userModel,this);
+        c.setAdapter(adapter);
+        cheackfoodlistChange();
 
 
+    }
+    public static void cheackfoodlistChange() {
+        if(instance==null)return;
+        instance.adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cheackfoodlistChange();
     }
 }

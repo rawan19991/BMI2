@@ -9,16 +9,17 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bmi.Model.BMI_Record_Model;
 import com.example.bmi.Model.UserModel;
 import com.example.bmi.R;
 import java.util.ArrayList;
 
 public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter> {
-    ArrayList<UserModel> list;
+    UserModel userModel;
     Context context;
 
-    public HomerAdapter(ArrayList<UserModel> list, Context context) {
-        this.list = list;
+    public HomerAdapter(UserModel list, Context context) {
+        this.userModel = list;
         this.context = context;
     } {
 
@@ -32,11 +33,11 @@ public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter
 
     @Override
     public void onBindViewHolder(@NonNull HomerAdapter.view_adapter holder, int position) {
-        final UserModel model=list.get(position);
-        holder.weight.setText(model.getWeight());
-        holder.length.setText(model.getLength());
-        holder.status.setText(model.getStatus());
-        holder.date.setText(model.getDate());
+        BMI_Record_Model usermodel=userModel.bmiRecordModels.get(position);
+        holder.weight.setText(usermodel.getWeight());
+        holder.length.setText(usermodel.getLength());
+        holder.status.setText(usermodel.getStatus());
+        holder.date.setText(usermodel.getDate());
 
     }
 
@@ -44,7 +45,7 @@ public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return userModel.bmiRecordModels.size();
 
     }
 

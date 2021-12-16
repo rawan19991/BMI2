@@ -29,7 +29,7 @@
         android:textSize="20sp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName2"
+        android:id="@+id/userNameEdit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
@@ -40,7 +40,7 @@
         android:inputType="textPersonName"/>
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/userEmailEdit"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
@@ -51,7 +51,7 @@
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName4"
+        android:id="@+id/userpassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"
@@ -63,7 +63,7 @@
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName5"
+        android:id="@+id/repassword"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginLeft="15dp"

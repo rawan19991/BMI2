@@ -24,10 +24,10 @@ import com.example.bmi.new_record;
 import java.util.ArrayList;
 
 public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter> {
-    ArrayList<Food_Model> list;
+    UserModel list;
     Context context;
 
-    public Food_Adapter(ArrayList<Food_Model> list, Context context) {
+    public Food_Adapter(UserModel list, Context context) {
         this.list = list;
         this.context = context;
     } {
@@ -42,7 +42,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
 
     @Override
     public void onBindViewHolder(@NonNull Food_Adapter.view_adapter holder, int position) {
-        final Food_Model model=list.get(position);
+        final Food_Model model=list.foodModels.get(position);
         holder.food_img.setImageResource(model.getFood_img());
         holder.food_name.setText(model.getFood_name());
         holder.food_catogries.setText(model.getFood_catogries());
@@ -66,7 +66,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
 
     @Override
     public int getItemCount() {
-        return list.size();
+        return list.foodModels.size();
 
     }
 

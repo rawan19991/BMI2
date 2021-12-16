@@ -6,6 +6,16 @@ public class Food_Model {
     String calory;
     String food_name;
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    String id;
+
 
     public Food_Model(int food_img, String calory, String food_name, String food_catogries) {
         this.food_img = food_img;
@@ -47,5 +57,6 @@ public class Food_Model {
     public void setFood_catogries(String food_catogries) {
         this.food_catogries = food_catogries;
     }
+
 
 }

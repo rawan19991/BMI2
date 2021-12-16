@@ -38,8 +38,8 @@
         android:layout_marginRight="20dp"
         android:background="@drawable/edit_text"
         android:ems="1"
-        android:hint="UserName"
-        android:inputType="textPersonName"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
         android:textSize="18sp" />
 
     <EditText

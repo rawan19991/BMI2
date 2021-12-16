@@ -52,7 +52,7 @@
             app:backgroundTint="@null" />
 
         <EditText
-            android:id="@+id/editTextNumber"
+            android:id="@+id/weightrecord"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -107,7 +107,7 @@ android:layout_gravity="center
             app:backgroundTint="@null" />
 
         <EditText
-            android:id="@+id/editTextNumber1"
+            android:id="@+id/lengthrecord"
             android:layout_width="100dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -153,7 +153,7 @@ android:layout_gravity="center
             android:textSize="20sp"  />
 
         <EditText
-            android:id="@+id/editTextDate"
+            android:id="@+id/date"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -189,7 +189,7 @@ android:layout_gravity="center
             android:textSize="20sp"  />
 
         <EditText
-            android:id="@+id/editTextDate1"
+            android:id="@+id/time"
             android:layout_width="180dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
