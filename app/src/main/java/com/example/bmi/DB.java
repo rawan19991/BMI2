@@ -10,11 +10,11 @@ public class DB {
         return FirebaseDatabase.getInstance().getReference("Users");
     }
     public static DatabaseReference getCurrentUserFood(){
-        return getCurrentUser().child("Food List");
+        return getCurrentUser().child("FoodList");
 
     }
     public static DatabaseReference getCurrentUserBMIRECode(){
-        return getCurrentUser().child("BMI Records");
+        return getCurrentUser().child("BMIRecords");
 
     }
     public static DatabaseReference getCurrentUserName(){

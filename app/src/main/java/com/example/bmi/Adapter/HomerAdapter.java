@@ -9,17 +9,26 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.bmi.DB;
 import com.example.bmi.Model.BMI_Record_Model;
 import com.example.bmi.Model.UserModel;
 import com.example.bmi.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 
 public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter> {
-    UserModel userModel;
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference reference;
+    //UserModel userModel;
     Context context;
 
-    public HomerAdapter(UserModel list, Context context) {
-        this.userModel = list;
+    public HomerAdapter(  UserModel userModell,Context context) {
+       UserModel.userModel = userModell;
         this.context = context;
     } {
 
@@ -33,7 +42,7 @@ public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter
 
     @Override
     public void onBindViewHolder(@NonNull HomerAdapter.view_adapter holder, int position) {
-        BMI_Record_Model usermodel=userModel.bmiRecordModels.get(position);
+        BMI_Record_Model usermodel=UserModel.userModel.bmiRecordModels.get(position);
         holder.weight.setText(usermodel.getWeight());
         holder.length.setText(usermodel.getLength());
         holder.status.setText(usermodel.getStatus());
@@ -45,7 +54,7 @@ public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter
 
     @Override
     public int getItemCount() {
-        return userModel.bmiRecordModels.size();
+        return UserModel.userModel.bmiRecordModels.size();
 
     }
 

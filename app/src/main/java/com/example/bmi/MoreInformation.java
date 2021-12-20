@@ -59,7 +59,6 @@ FirebaseHelper helper;
         day=mcalendar.get(Calendar.DAY_OF_MONTH);
         year=mcalendar.get(Calendar.YEAR);
         month=mcalendar.get(Calendar.MONTH);
-        Log.d("Year", "Year:"+year);
         male=findViewById(R.id.rb_male);
         female=findViewById(R.id.rb_female);
         radioGroup=findViewById(R.id.radio_group);
@@ -74,7 +73,7 @@ FirebaseHelper helper;
                 String length=userlength.getText().toString();
                 UserModel.userModel.setGender(gender);
                 UserModel.userModel.setDate_birth(BOD);
-                helper.CompleInfromation(UserModel.userModel);
+                helper.CompleInfromation(UserModel.userModel,MoreInformation.this);
 
 
 

@@ -51,7 +51,6 @@ public class FirebaseHelper {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
-                            Toast.makeText(activity,"Error in Intent",Toast.LENGTH_LONG).show();
                             Intent intent=new Intent(activity,MoreInformation.class);
                             activity.startActivity(intent);
                             activity.finish();
@@ -112,7 +111,7 @@ public class FirebaseHelper {
     public static void AddBmiRecord(BMI_Record_Model model){
         String id=DB.getCurrentUserBMIRECode().push().getKey();
         model.setId(id);
-        DB.getCurrentUser().child(id).setValue(model);
+        DB.getCurrentUser().child("BMIRecords").child(id).setValue(model);
     }
     public static void AddFood(Food_Model model){
         String id=DB.getCurrentUserFood().push().getKey();
@@ -125,9 +124,11 @@ public class FirebaseHelper {
     public static void RemoveRecord(BMI_Record_Model model){
         DB.getCurrentUserBMIRECode().child(model.getId()).removeValue();
     }
-    public static void CompleInfromation(UserModel model){
+    public static void CompleInfromation(UserModel model,AppCompatActivity activity){
         DB.getCurrentUserGender().setValue(model.getGender());
         DB.getCurrentUserBirth_date().setValue(model.getDate_birth());
+        Intent intent=new Intent(activity,HomeActivity.class);
+        activity.startActivity(intent);
 
     }
 

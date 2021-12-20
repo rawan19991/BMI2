@@ -26,13 +26,13 @@
             android:text="Hi," />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/nameee"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/main_color"
             android:textStyle="bold"
             android:textSize="18sp"
-            android:text="Name" />
+             />
     </LinearLayout>
 
     <TextView
@@ -74,6 +74,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview_user"
         android:layout_width="match_parent"
+        android:background="@color/main_color"
         android:layout_height="280dp"
         android:layout_marginTop="5dp"
         tools:listitem="@layout/view_status" />

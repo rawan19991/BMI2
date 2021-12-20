@@ -35,16 +35,17 @@ public static HomerAdapter adapter;
         addrecord=findViewById(R.id.add_record);
         addfood=findViewById(R.id.add_food);
         viewfood=findViewById(R.id.view_food);
-        name=findViewById(R.id.name);
+        name=findViewById(R.id.nameee);
         statues=findViewById(R.id.state);
         Logout=findViewById(R.id.Logout);
+        name.setText(UserModel.userModel.getName_user());
 
         //////////////////////////////////////////////////////
         Recycl.setHasFixedSize(true);
         Recycl.setLayoutManager(new LinearLayoutManager(this));
         adapter=new HomerAdapter(UserModel.userModel,this);
         Recycl.setAdapter(adapter);
-        cheackBmiChange();
+        adapter.notifyDataSetChanged();
         name.setText(UserModel.userModel.getName_user());
 
         addrecord.setOnClickListener(new View.OnClickListener() {
@@ -86,7 +87,6 @@ public static HomerAdapter adapter;
     public static void cheackBmiChange() {
         if(instance==null)return;
         instance.adapter.notifyDataSetChanged();
-        instance.statues.setText(UserModel.userModel.gethomeMessage);
         instance.name.setText(UserModel.userModel.getName_user());
     }
 

@@ -1,5 +1,7 @@
 package com.example.bmi.Model;
 
+import com.example.bmi.R;
+
 public class Food_Model {
     int food_img;
     String food_catogries;
@@ -17,8 +19,7 @@ public class Food_Model {
     String id;
 
 
-    public Food_Model(int food_img, String calory, String food_name, String food_catogries) {
-        this.food_img = food_img;
+    public Food_Model(String calory, String food_name, String food_catogries) {
         this.calory = calory;
         this.food_name = food_name;
         this.food_catogries = food_catogries;
@@ -27,7 +28,16 @@ public class Food_Model {
 
 
     public int getFood_img() {
-        return food_img;
+        if(food_catogries.equals("fish")){
+            return R.drawable.fish;
+        }
+        else if(food_catogries.equals("fruit")){
+            return R.drawable.apple;
+        }
+        else if(food_catogries.equals("carbohydrate")){
+            return R.drawable.bread;}
+            else{
+            return R.drawable.oliveoil;}
     }
 
     public void setFood_img(int food_img) {

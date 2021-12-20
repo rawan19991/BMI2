@@ -17,7 +17,6 @@ public class new_record extends AppCompatActivity {
 Button savedata;
 EditText weight,lenght,times,date;
 FirebaseHelper helper;
-BMI_Record_Model bmi_record_model;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,8 +26,6 @@ BMI_Record_Model bmi_record_model;
         lenght=findViewById(R.id.lengthrecord);
         times=findViewById(R.id.time);
         date=findViewById(R.id.date);
-
-
         savedata.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +34,8 @@ BMI_Record_Model bmi_record_model;
                 String today=date.getText().toString();
                 String time=times.getText().toString();
                 Intent i=new Intent(new_record.this,HomeActivity.class);
-                bmi_record_model=new BMI_Record_Model(weightt,lengthh,today);
+                BMI_Record_Model bmi_record_model=new BMI_Record_Model(weightt,lengthh,today);
+                UserModel.userModel.bmiRecordModels.add(bmi_record_model);
                 helper.AddBmiRecord(bmi_record_model);
                 startActivity(i);
             }

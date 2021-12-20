@@ -19,7 +19,6 @@ public class BMI_Record_Model {
         final static String BC="Be Careful ";
         final static String SB="So Bad";
 
-
     }
     public double getBMI(){
         Double weights=Double.parseDouble(weight);
@@ -49,8 +48,14 @@ public class BMI_Record_Model {
         this.date = date;
     }
     public String getStatus() {
-
-        return status;
+        if(getBMI()<18.5){
+            return Constrains.underweight;}
+        else if(getBMI()>=18.5&&getBMI()<25){
+            return Constrains.Healthy;}
+        else if(getBMI()>=25&&getBMI()<30){
+            return Constrains.OverWeight;}
+         else{
+    return Constrains.Obesity;}
     }
 
     public void setStatus(String status) {
@@ -80,6 +85,7 @@ public class BMI_Record_Model {
     public void setDate(String date) {
         this.date = date;
     }
+
 
 
 }

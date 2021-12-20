@@ -37,7 +37,7 @@
             android:text="Name" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName7"
+            android:id="@+id/nameoffoood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -88,7 +88,7 @@
         android:text="Calory" />
 
     <EditText
-        android:id="@+id/editTextNumber2"
+        android:id="@+id/foodCalory"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         android:ems="7"
@@ -137,7 +137,7 @@ android:src="@drawable/apple"/>
             android:text="upload photo" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/savefood"
             android:layout_width="80dp"
             android:layout_height="50dp"
             android:text="save" />

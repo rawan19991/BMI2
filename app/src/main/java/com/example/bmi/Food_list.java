@@ -20,15 +20,12 @@ public class Food_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_list);
-        RecyclerView c=findViewById(R.id.recyclerview_food);
-        c.setHasFixedSize(true);
-        c.setLayoutManager(new LinearLayoutManager(this));
-        c.setAdapter(adapter);
+        RecyclerView rec=findViewById(R.id.recyclerview_food);
+        rec.setHasFixedSize(true);
+        rec.setLayoutManager(new LinearLayoutManager(this));
         adapter=new Food_Adapter(UserModel.userModel,this);
-        c.setAdapter(adapter);
-        cheackfoodlistChange();
-
-
+        rec.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
     }
     public static void cheackfoodlistChange() {
         if(instance==null)return;
