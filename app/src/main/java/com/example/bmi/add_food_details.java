@@ -39,9 +39,9 @@ EditText foodname,foodcalory;
                 String FoodCal=foodcalory.getText().toString();
                 String foodCat=foodspinner.getSelectedItem().toString();
                 Intent i=new Intent(add_food_details.this,HomeActivity.class);
-                Food_Model food_model=new Food_Model(FoodN,FoodCal,foodCat);
-                UserModel.userModel.foodModels.add(food_model);
-                helper.AddFood(food_model);
+                Food_Model food_models=new Food_Model(FoodN,FoodCal,foodCat);
+                UserModel.userModel.foodModels.add(food_models);
+                helper.AddFood(food_models);
                 startActivity(i);
 
             }

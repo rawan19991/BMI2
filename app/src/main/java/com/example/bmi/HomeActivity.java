@@ -13,14 +13,14 @@ import android.widget.TextView;
 import com.example.bmi.Adapter.HomerAdapter;
 import com.example.bmi.Model.BMI_Record_Model;
 import com.example.bmi.Model.UserModel;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 
 public class HomeActivity extends AppCompatActivity {
-TextView name,statues;
+TextView nomee,statues;
 TextView Logout;
 Button addrecord,addfood,viewfood;
-static HomeActivity instance;
 public static HomerAdapter adapter;
     RecyclerView Recycl;
     FirebaseHelper helpers;
@@ -35,10 +35,9 @@ public static HomerAdapter adapter;
         addrecord=findViewById(R.id.add_record);
         addfood=findViewById(R.id.add_food);
         viewfood=findViewById(R.id.view_food);
-        name=findViewById(R.id.nameee);
+        nomee=findViewById(R.id.nome);
         statues=findViewById(R.id.state);
         Logout=findViewById(R.id.Logout);
-        name.setText(UserModel.userModel.getName_user());
 
         //////////////////////////////////////////////////////
         Recycl.setHasFixedSize(true);
@@ -46,8 +45,7 @@ public static HomerAdapter adapter;
         adapter=new HomerAdapter(UserModel.userModel,this);
         Recycl.setAdapter(adapter);
         adapter.notifyDataSetChanged();
-        name.setText(UserModel.userModel.getName_user());
-
+        nomee.setText(UserModel.userModel.getName_user());
         addrecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,15 +82,11 @@ public static HomerAdapter adapter;
             }
         });
     }
-    public static void cheackBmiChange() {
-        if(instance==null)return;
-        instance.adapter.notifyDataSetChanged();
-        instance.name.setText(UserModel.userModel.getName_user());
-    }
 
     @Override
     protected void onResume() {
         super.onResume();
-        cheackBmiChange();
+        adapter.notifyDataSetChanged();
+        nomee.setText(UserModel.userModel.getName_user());
     }
 }

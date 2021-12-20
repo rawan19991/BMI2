@@ -47,7 +47,6 @@ public class HomerAdapter extends RecyclerView.Adapter<HomerAdapter.view_adapter
         holder.length.setText(usermodel.getLength());
         holder.status.setText(usermodel.getStatus());
         holder.date.setText(usermodel.getDate());
-
     }
 
 

@@ -33,7 +33,6 @@ import java.util.HashMap;
 public class MoreInformation extends AppCompatActivity {
 Button save_data;
 EditText userWeight,userlength;
-EditText dateofbirth;
 RadioGroup radioGroup;
 RadioButton male,female;
 FirebaseHelper helper;

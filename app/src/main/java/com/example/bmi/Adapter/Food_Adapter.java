@@ -14,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bmi.Edit_Food_Details;
+import com.example.bmi.FirebaseHelper;
 import com.example.bmi.Food_list;
 import com.example.bmi.HomeActivity;
 import com.example.bmi.Model.BMI_Record_Model;
@@ -26,6 +27,7 @@ import java.util.ArrayList;
 
 public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter> {
     Context context;
+    FirebaseHelper helper;
 
     public Food_Adapter(UserModel usermodel, Context context) {
         UserModel.userModel=usermodel;
@@ -50,12 +52,18 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, Edit_Food_Details.class);
+                Intent intent=new Intent(context, HomeActivity.class);
                intent.putExtra("foods",model.getFood_name());
                 intent.putExtra("images",model.getFood_img());
                 intent.putExtra("catos",model.getFood_catogries());
                 intent.putExtra("calos",model.getCalory());
                 context.startActivity(intent);
+            }
+        });
+        holder.deletee_food.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                helper.RemoveFood(model);
             }
         });
 

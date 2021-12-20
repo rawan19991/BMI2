@@ -136,7 +136,7 @@ tools:context=".add_food_details">
         android:text="upload photo" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/Save"
         android:layout_width="80dp"
         android:layout_height="50dp"
         android:text="save" />
