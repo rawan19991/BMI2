@@ -39,6 +39,7 @@ FirebaseHelper helper;
      Calendar mcalendar=Calendar.getInstance();
      EditText mdob_et;
      int day,month,year;
+     Button plus,min,plus1,min1;
 
 
     @Override
@@ -48,12 +49,42 @@ FirebaseHelper helper;
         userlength=findViewById(R.id.lengthuser);
         userWeight=findViewById(R.id.weightuser);
         mdob_et=findViewById(R.id.dob_et);
+        plus=findViewById(R.id.plus);
+        min=findViewById(R.id.minues);
+        min1=findViewById(R.id.min);
+        plus1=findViewById(R.id.plus1);
+
         mdob_et.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DateDialog();
             }
         });
+        plus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editplus(userWeight);
+            }
+        });
+        min.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editmin(userWeight);
+            }
+        });
+        plus1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editplus(userlength);
+            }
+        });
+        min1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editmin(userlength);
+            }
+        });
+
 
         day=mcalendar.get(Calendar.DAY_OF_MONTH);
         year=mcalendar.get(Calendar.YEAR);
@@ -92,7 +123,6 @@ FirebaseHelper helper;
     }
 
     public String rb_Chosen(int checked_id){
-        String Gender="";
         if(checked_id==female.getId()){
             return female.getText().toString();
         }
@@ -101,6 +131,15 @@ FirebaseHelper helper;
 
 
 
+    }
+    public  void editplus(EditText text){
+        int count=Integer.parseInt(text.getText().toString());
+        text.setText(count+1+"");
+
+    }
+    public  void editmin(EditText text){
+        int count=Integer.parseInt(text.getText().toString());
+        text.setText(count-1+"");
 
     }
 }

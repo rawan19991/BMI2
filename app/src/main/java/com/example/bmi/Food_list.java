@@ -23,7 +23,7 @@ public class Food_list extends AppCompatActivity {
         RecyclerView rec=findViewById(R.id.recyclerview_food);
         rec.setHasFixedSize(true);
         rec.setLayoutManager(new LinearLayoutManager(this));
-        adapter=new Food_Adapter(UserModel.userModel,this);
+        adapter=new Food_Adapter(UserModel.userModel.foodModels,this);
         rec.setAdapter(adapter);
         adapter.notifyDataSetChanged();
     }

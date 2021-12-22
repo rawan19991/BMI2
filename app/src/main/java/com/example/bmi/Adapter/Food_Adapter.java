@@ -28,9 +28,10 @@ import java.util.ArrayList;
 public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter> {
     Context context;
     FirebaseHelper helper;
+    ArrayList<Food_Model> foodModelArrayList;
 
-    public Food_Adapter(UserModel usermodel, Context context) {
-        UserModel.userModel=usermodel;
+    public Food_Adapter(ArrayList<Food_Model> models, Context context) {
+        foodModelArrayList=models;
         this.context = context;
     } {
 
@@ -44,7 +45,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
 
     @Override
     public void onBindViewHolder(@NonNull Food_Adapter.view_adapter holder, int position) {
-        Food_Model model=UserModel.userModel.foodModels.get(position);
+        Food_Model model=foodModelArrayList.get(position);
         holder.food_img.setImageResource(model.getFood_img());
         holder.food_name.setText(model.getFood_name());
         holder.food_catogries.setText(model.getFood_catogries());
@@ -52,7 +53,7 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
         holder.edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(context, HomeActivity.class);
+                Intent intent=new Intent(context, Edit_Food_Details.class);
                intent.putExtra("foods",model.getFood_name());
                 intent.putExtra("images",model.getFood_img());
                 intent.putExtra("catos",model.getFood_catogries());
@@ -70,11 +71,9 @@ public class Food_Adapter extends RecyclerView.Adapter<Food_Adapter.view_adapter
 
     }
 
-
-
     @Override
     public int getItemCount() {
-        return UserModel.userModel.foodModels.size();
+        return foodModelArrayList.size();
 
     }
 

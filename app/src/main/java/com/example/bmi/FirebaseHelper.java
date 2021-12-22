@@ -25,6 +25,8 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FirebaseHelper {
     static final FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -102,7 +104,7 @@ public class FirebaseHelper {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 UserModel.userModel.updateList(snapshot, activity);
-                HomeActivity.cheackBmiChange();
+
 
             }
 
@@ -130,7 +132,7 @@ public class FirebaseHelper {
     }
 
     public static void RemoveFood(Food_Model model) {
-        DB.getCurrentUserFood().child(model.getId()).removeValue();
+        DB.getCurrentUserFood().child("FoodList").child(model.getId()).removeValue();
     }
 
     public static void RemoveRecord(BMI_Record_Model model) {
@@ -145,10 +147,13 @@ public class FirebaseHelper {
 
     }
 
-    /*public static void updatefood() {
+    public static void updatefood(Food_Model data) {
+        String id = DB.getCurrentUserFood().push().getKey();
+        reference.child(id).updateChildren((Map<String, Object>) data);
 
 
-    }*/
+
+    }
 
     /*public static void getUser() {
         reference=database.getReference("FoodList");

@@ -35,11 +35,11 @@ EditText foodname,foodcalory;
         saveFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent i=new Intent(add_food_details.this,Food_list.class);
                 String FoodN=foodname.getText().toString();
                 String FoodCal=foodcalory.getText().toString();
                 String foodCat=foodspinner.getSelectedItem().toString();
-                Intent i=new Intent(add_food_details.this,HomeActivity.class);
-                Food_Model food_models=new Food_Model(FoodN,FoodCal,foodCat);
+                Food_Model food_models=new Food_Model(FoodCal,FoodN,foodCat);
                 UserModel.userModel.foodModels.add(food_models);
                 helper.AddFood(food_models);
                 startActivity(i);

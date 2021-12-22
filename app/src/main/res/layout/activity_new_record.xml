@@ -42,7 +42,7 @@
             />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/mi"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -61,7 +61,7 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/pl"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -99,7 +99,7 @@ android:layout_gravity="center
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/mi1"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"
@@ -118,7 +118,7 @@ android:layout_gravity="center
             android:inputType="number" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/pl1"
             android:layout_width="40dp"
             android:layout_height="match_parent"
             android:background="@drawable/custome"

@@ -15,12 +15,14 @@ import android.widget.Toast;
 import com.example.bmi.Model.Food_Model;
 import com.example.bmi.Model.UserModel;
 
+import java.util.HashMap;
+
 public class Edit_Food_Details extends AppCompatActivity {
 EditText namefood,caloryfood;
 ImageView foodimg;
 Spinner cat_spinner;
 Button save,uploadphoto;
-public int CALORY;
+ int cALORY;
 FirebaseHelper helper;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,23 +37,28 @@ FirebaseHelper helper;
                 .getStringArray(R.array.foodCato)));
         ///////////////////////////////////////////////////////////////////////
         int img = getIntent().getIntExtra("images", 0);
-        CALORY = Integer.parseInt(getIntent().getStringExtra("calos"));
+        cALORY = Integer.parseInt(getIntent().getStringExtra("calos"));
         String name = getIntent().getStringExtra("foods");
         String catogries = getIntent().getStringExtra("catos");
         /////////////////////////////////////////////////////////
 
         foodimg.setImageResource(img);
         cat_spinner.setSelection(getIndex(cat_spinner, catogries));
-        caloryfood.setText(String.format("%d", CALORY));
+        caloryfood.setText(String.format("%d", cALORY));
         namefood.setText(name);
 
 save.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
+        Intent i=new Intent(Edit_Food_Details.this,Food_list.class);
         String cat=cat_spinner.getSelectedItem().toString();
         String cal=caloryfood.getText().toString();
         String foodname=namefood.getText().toString();
-        Food_Model food_model=new Food_Model(foodname,cal,cat);
+        Food_Model food_model=new Food_Model(cal,foodname,cat);
+
+        helper.updatefood(food_model);
+        startActivity(i);
+
     }
 });
     }
